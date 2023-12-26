@@ -1,39 +1,17 @@
-function spy(){ return 'hi';};
-function receivesAFunction(p){
-return p();
+function cb(){
+  console.log('hi')
 }
-receivesAFunction(spy);
+function receivesAFunction(cb){
+cb()
+}
 
-/*describe("returnsANamedFunction()", () => {
-    var fn;
-    before(() => {
-      fn = returnsANamedFunction();
-    });
-    it("returns a function", () => {
-      expect(fn).to.be.a("function");
-    });
-    it("returns a named function", () => {
-      expect(fn.name).not.to.eql("");
-    */
-    function  namedfunc(){ console.log('hi');}
-     function returnsANamedFunction(){
-        
-        return namedfunc;
-     }
-/*describe("", () => {
-    var fn;
-    before(() => {
-      fn = returnsAnAnonymousFunction();
-    });
 
-    it("returns a function", () => {
-      expect(fn).to.be.a("function");
-    });
-    it("returns an anonymous function", () => {
-      expect(fn.name).to.eql("");
-    });*/
+function returnsANamedFunction(){
+  return function namedF(){ console.log('h')}
+}
 
 function returnsAnAnonymousFunction(){
-return function (){ };
+  return function () {
+    console.log('im an')
+  }
 }
-
